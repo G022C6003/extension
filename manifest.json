@@ -1,32 +1,30 @@
 {
+  "manifest_version": 2,
+  "name": "Borderify",
+  "version": "1.0",
 
-    "manifest_version": 2,
-    "name": "Borderify",
-    "version": "1.0",
-  
-    "description": "選択した文字が自動でクリップボードに登録",
-  
-    "icons": {
-      "48": "sample.svg"
-    },
-    
-    "content_scripts": [
-      {
-        "matches": ["http://*/*","https://*/*"],
-        "js": ["borderify.js"]
-      }
-    ],
-    
-    "background": {
-      "scripts": ["borderify.js"]
-    },
+  "description": "選択した文字が自動でクリップボードに登録",
 
-    "browser_action":{
-        "default_icon": "sample.svg",
-        "default_title": "拡張機能",
-        "default_popup": "sample.html"
-    },
-    
-    "permissions": ["storage"]
-  }
-  
+  "icons": {
+    "48": "sample.svg"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["clipboard.js"]
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "browser_action": {
+    "default_icon": "sample.svg",
+    "default_title": "拡張機能",
+    "default_popup": "clipboard.html"
+  },
+
+  "permissions": ["storage", "activeTab"]
+}

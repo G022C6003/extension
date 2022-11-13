@@ -10,7 +10,7 @@ function lengthGet(item) {
     browser.storage.local.set({
         [getStorageLength + 1]: activeTextArea
     });
-    console.log(getStorageLength);
+    getStorageLength++;
 }
 
 function error(error) {
@@ -26,6 +26,16 @@ window.addEventListener('mouseup', e => {
         //ストレージの中身を取得
         getStorage = browser.storage.local.get();
         getStorage.then(lengthGet, error);
+        console.log(getStorage);
         console.log(getStorageLength);
     }
 });
+
+function clearStorageExecute() {
+    console.log('消したよ');
+}
+
+document.getElementById("deleteStorageAll").onclick = function () {
+    var clearStorage = browser.storage.local.clear();
+    clearStorage.then(clearStorageExecute, error);
+};
