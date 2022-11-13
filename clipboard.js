@@ -4,7 +4,9 @@ let getStorageLength = 0;
 let activeTextArea;
 
 let sendlocalStorage = {};
+
 let clearButton = document.querySelector('.deleteStorageAll');
+let checkButton = document.querySelector('.checkStorage');
 
 function sendOk() {
     console.log('送ったよ');
@@ -21,20 +23,25 @@ window.addEventListener("mouseup", () => {
         localStorage.setItem(getStorageLength, activeTextArea);
         getStorageLength++;
         //localStorageの中身を送れるようにする
-        getLocalStorage();
         //コンテンツスクリプトからバックグラウンドスクリプトに送る
         console.log(localStorage);
-        var sending = browser.runtime.sendMessage(sendlocalStorage);
+        var sending = browser.runtime.sendMessage(activeTextArea);
         sending.then(sendOk, sendNg);
     }
 });
 
 clearButton.addEventListener("click", () => {
     //バックグラウンド側のlocalStorage
-    // localStorage.clear();
+    localStorage.clear();
     console.log(localStorage);
     getStorageLength = 0;
 });
+
+checkButton.addEventListener("click", () => {
+    console.log(localStorage);
+});
+
+
 
 function getLocalStorage() {
     for (i = 0; i < getStorageLength; i++) {
