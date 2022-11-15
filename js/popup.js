@@ -1,17 +1,19 @@
 //popup.htmlにlocalStorageの中身を入れる処理。
-let setNumber = 1;
-$(`#set${setNumber}`).text("ここに表示される");
-
-$('.deleteStorageAll').on('click', () => {
-    localStorage.clear();
-    $(`#set${setNumber}`).text("全消去");
+if (localStorage.length == 0) {
+    $(`#set1`).text("はいってねーぞ");
+    return;
+} else {
     for (i = 0; i <= 19; i++) {
         $(`#set${i + 1}`).text(localStorage.getItem(i));
     }
-    console.log(localStorage);
-});
+}
+console.log(localStorage.length);
+console.log(localStorage);
 
-$('.checkStorage').on('click', () => {
+//localStorageの中身を消したいとき
+$('.deleteStorageAll').on('click', () => {
+    localStorage.clear();
+    $(`#set${setNumber}`).text("全消去");
     for (i = 0; i <= 19; i++) {
         $(`#set${i + 1}`).text(localStorage.getItem(i));
     }

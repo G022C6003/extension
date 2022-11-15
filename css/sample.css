@@ -1,11 +1,40 @@
 body {
-    height: auto;
-    width: auto;
+    height: 100px;
+    width: 550px;
+    background-color: bisque;
 }
 ul{
-    
+    margin-left: 3%;
 }
-li {
-    list-style: none;
-    
+.button008 .deleteStorageAll {
+    background: #eee;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100px;
+    padding: 10px 25px;
+    color: #313131;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    z-index:0;
+}
+.button008 .deleteStorageAll:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0;
+    display: block;
+    background: #6bb6ff;
+    transition: .3s;
+    left:0;
+}
+.button008 .deleteStorageAll:hover {
+    color: #FFF;
+}
+.button008 .deleteStorageAll:hover:before {
+    width: 100%;
+    z-index: -1;
 }

@@ -1,16 +1,15 @@
-let getStorageLength = 0;
+// let getStorageLength = 0;
 function handleMessage(message) {
     //最大20個まで格納する処理
-    if (getStorageLength == 20) {
-        for (i = 0; i <= 20; i++) {
-
+    if (localStorage.length == 20) {
+        for (i = 0; i < localStorage.length; i++) {
+            localStorage.setItem(i,localStorage.getItem(i+1))
         }
-        //20個目を空にする
-        localStorage.setItem(19, null);
-
+        //最後に格納
+        localStorage.setItem(19,message)
     } else {
-        localStorage.setItem(getStorageLength, message);
-        getStorageLength++;
+        localStorage.setItem(localStorage.length, message);
+        // getStorageLength++;
     }
     console.log(localStorage);
 }
