@@ -1,8 +1,9 @@
 body {
     height: auto;
+    width: auto;
 }
 ul{
-    width: 40px;
+    
 }
 li {
     list-style: none;
