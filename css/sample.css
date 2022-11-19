@@ -1,40 +1,55 @@
 body {
-    height: 100px;
-    width: 550px;
-    background-color: bisque;
+  height: auto;
+  width: 500px;
+  background-color: #f0ffff;
 }
-ul{
-    margin-left: 3%;
+li {
+  list-style: none;
+  padding: 10px 30px 5px 30px;
+  color: #313131;
+}
+li:hover {
+  color: coral;
+  transition: 0.3s;
+}
+hr{
+    color: #313131;
 }
 .button008 .deleteStorageAll {
-    background: #eee;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 100px;
-    padding: 10px 25px;
-    color: #313131;
-    transition: 0.3s ease-in-out;
-    font-weight: 500;
-    z-index:0;
+  background: #6bb6ff;
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 200px;
+  padding: 10px;
+  color: #313131;
+  transition: 0.3s ease-in-out;
+  font-weight: 500;
+  z-index: 0;
+  left: 78%;
+  right: 0%;
+  bottom: 0px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 .button008 .deleteStorageAll:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 0;
-    display: block;
-    background: #6bb6ff;
-    transition: .3s;
-    left:0;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  display: block;
+  background: #ff4f50;
+  transition: 0.1s;
+  left: 0;
+  border-radius: 5px;
 }
 .button008 .deleteStorageAll:hover {
-    color: #FFF;
+  color: #fff;
 }
 .button008 .deleteStorageAll:hover:before {
-    width: 100%;
-    z-index: -1;
+  width: 100%;
+  z-index: -1;
 }

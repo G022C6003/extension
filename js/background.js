@@ -1,4 +1,3 @@
-// let getStorageLength = 0;
 function handleMessage(message) {
     //最大20個まで格納する処理
     if (localStorage.length == 20) {
