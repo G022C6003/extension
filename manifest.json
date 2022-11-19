@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "Borderify",
+  "name": "EZClip",
   "version": "1.0",
 
-  "description": "選択した文字が自動でクリップボードに登録",
+  "description": "選択した文字を一時的に格納。PCのクリップボードを汚染したくない人におすすめ！",
 
   "icons": {
-    "48": "sample.svg"
+    "48": "image/Extension_icon.svg"
   },
 
   "content_scripts": [
@@ -21,7 +21,7 @@
   },
 
   "browser_action": {
-    "default_icon": "sample.svg",
+    "default_icon": "image/Extension_icon.svg",
     "default_title": "拡張機能",
     "default_popup": "popup.html"
   },
